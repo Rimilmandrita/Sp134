@@ -73,24 +73,49 @@ int countItems() //To count the number of elements in the list
 	}
     cout<<"NULL"<<endl;
    }
+   int sort(int n)
+{           node *temp=new node;
+	node *temp1=new node;
+	node *temp2=new node;
+	temp=head;
+for (int i=0;i<n;i++)
+    { 
+	for (int j=0;j<(n-i)-1;j++)
+   {
+   	if(temp->data > temp->next->data)
+   	{
+   	temp2=temp;
+   	temp=temp->next;
+   	temp->next=temp;
+   		
+   	}
+   }
+    }
+    return 0;
+}
 };
 
-class bubbleSort
+
 
 int main() {
 
  linkedList l; // Declaring object of class linkedList
+ 
 
  l.insert(1);
-
+ l.insert(4);
  l.insert(2);
-
+ l.insert(3);
  l.display();
 
  cout<<"The total number of elements in the list is "<<l.countItems()<<endl;
+ int n=l.countItems();
+ 
+ 
+ l.sort(n);
+ l.display();
 
 	return 0;
-
 }
 
  
